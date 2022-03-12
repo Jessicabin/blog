@@ -1,0 +1,1 @@
+const t={key:"v-d74704c8",path:"/vue/form-validate.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{contributors:[{name:"Jessicabin",email:"bin.jessica@hotmail.com",commits:1}]},filePathRelative:"vue/form-validate.md"};export{t as data};

@@ -1,0 +1,1 @@
+const e={key:"v-13b1f5ce",path:"/vue/draggable.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{contributors:[{name:"Jessicabin",email:"bin.jessica@hotmail.com",commits:1}]},filePathRelative:"vue/draggable.md"};export{e as data};

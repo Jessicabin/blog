@@ -1,0 +1,1 @@
+const t={key:"v-46c70ab6",path:"/vite/config.html",title:"\u4E00\u822C\u914D\u7F6E",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{contributors:[{name:"Jessicabin",email:"bin.jessica@hotmail.com",commits:1}]},filePathRelative:"vite/config.md"};export{t as data};

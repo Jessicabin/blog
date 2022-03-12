@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.35">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <link rel="icon" href="/images/logo.jpg"><title>基于 echarts 的组件封装 | Jessica's Blog</title><meta name="description" content="-">
+    <link rel="modulepreload" href="/blog/assets/app.1cb6ce62.js"><link rel="modulepreload" href="/blog/assets/echarts.html.a971c125.js"><link rel="modulepreload" href="/blog/assets/echarts.html.ef9c0e16.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/blog/assets/style.19c2e455.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header ref_key="navbar" class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/blog/" class=""><!----><span class="site-name">Jessica&#39;s Blog</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">Javascript <span class="right arrow"></span></p><!--[--><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/blog/javascript/es.html" class="sidebar-item" aria-label="ES6 之后新特性"><!--[--><!--]--> ES6 之后新特性 <!--[--><!--]--></a><!----></li><li><a href="/blog/javascript/promise.html" class="sidebar-item" aria-label="期约（Promise）"><!--[--><!--]--> 期约（Promise） <!--[--><!--]--></a><!----></li><li><a href="/blog/javascript/fetch.html" class="sidebar-item" aria-label="基于axios封装api调用方法"><!--[--><!--]--> 基于axios封装api调用方法 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><li><p tabindex="0" class="sidebar-item sidebar-heading active collapsible">Vue <span class="down arrow"></span></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/vue/keep-alive.html" class="sidebar-item" aria-label="keep-alive"><!--[--><!--]--> keep-alive <!--[--><!--]--></a><!----></li><li><a href="/blog/vue/vuex.html" class="sidebar-item" aria-label="vuex 应用"><!--[--><!--]--> vuex 应用 <!--[--><!--]--></a><!----></li><li><a href="/blog/vue/components.html" class="sidebar-item" aria-label="批量引入自定义组件"><!--[--><!--]--> 批量引入自定义组件 <!--[--><!--]--></a><!----></li><li><a href="/blog/vue/table.html" class="sidebar-item" aria-label="基于element-ui的table组件封装"><!--[--><!--]--> 基于element-ui的table组件封装 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/blog/vue/echarts.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="基于 echarts 的组件封装"><!--[--><!--]--> 基于 echarts 的组件封装 <!--[--><!--]--></a><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/blog/vue/echarts.html#echart-按需引入" class="router-link-active router-link-exact-active sidebar-item" aria-label="echart 按需引入"><!--[--><!--]--> echart 按需引入 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/blog/vue/echarts.html#封装组件" class="router-link-active router-link-exact-active sidebar-item" aria-label="封装组件"><!--[--><!--]--> 封装组件 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/blog/vue/echarts.html#使用示例" class="router-link-active router-link-exact-active sidebar-item" aria-label="使用示例"><!--[--><!--]--> 使用示例 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><!--]--></ul><!--]--></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">Css <span class="right arrow"></span></p><!--[--><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/blog/css/grid.html" class="sidebar-item" aria-label="Grid 布局应用"><!--[--><!--]--> Grid 布局应用 <!--[--><!--]--></a><!----></li><li><a href="/blog/css/flex-folder.html" class="sidebar-item" aria-label="flex及伸缩布局应用"><!--[--><!--]--> flex及伸缩布局应用 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">vite <span class="right arrow"></span></p><!--[--><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/blog/vite/config.html" class="sidebar-item" aria-label="一般配置"><!--[--><!--]--> 一般配置 <!--[--><!--]--></a><!----></li><li><a href="/blog/vite/import-page.html" class="sidebar-item" aria-label="动态引入文件夹下所有页面"><!--[--><!--]--> 动态引入文件夹下所有页面 <!--[--><!--]--></a><!----></li><li><a href="/blog/vite/import-store.html" class="sidebar-item" aria-label="vuex 批量引入store文件"><!--[--><!--]--> vuex 批量引入store文件 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="基于-echarts-的组件封装" tabindex="-1"><a class="header-anchor" href="#基于-echarts-的组件封装" aria-hidden="true">#</a> 基于 echarts 的组件封装</h1><p>由于 echarts 在使用时都需要初始化，以及注册 resize 事件，每个文件都要写这些代码，所以封装 echarts 组件更方便调用。</p><p>从外部传入<strong>echart 配置</strong>并在组件外添加<strong>宽高样式</strong>，即可展示统计图表。</p><p><em>echarts 图表展示一定需要限定 div 宽高，否则不会显示</em>。</p><h2 id="echart-按需引入" tabindex="-1"><a class="header-anchor" href="#echart-按需引入" aria-hidden="true">#</a> echart 按需引入</h2><p>echarts 依赖库比较大，避免占用过多空间，使用按需引入是比较好的选择。</p><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token comment">// 引入 echarts 核心模块，核心模块提供了 echarts 使用必须要的接口。</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> echarts <span class="token keyword">from</span> <span class="token string">&quot;echarts/core&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// 引入柱状图图表，图表后缀都为 Chart</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BarChart<span class="token punctuation">,</span> PieChart<span class="token punctuation">,</span> LineChart <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;echarts/charts&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// 引入提示框，标题，直角坐标系，数据集，内置数据转换器组件，组件后缀都为 Component</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>
+  TitleComponent<span class="token punctuation">,</span>
+  LegendComponent<span class="token punctuation">,</span>
+  TooltipComponent<span class="token punctuation">,</span>
+  GridComponent<span class="token punctuation">,</span>
+  DatasetComponent<span class="token punctuation">,</span>
+  TransformComponent<span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;echarts/components&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// 标签自动布局，全局过渡动画等特性</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> LabelLayout<span class="token punctuation">,</span> UniversalTransition <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;echarts/features&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// 引入 Canvas 渲染器，注意引入 CanvasRenderer 或者 SVGRenderer 是必须的一步</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CanvasRenderer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;echarts/renderers&quot;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 注册必须的组件</span>
+echarts<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  TitleComponent<span class="token punctuation">,</span>
+  TooltipComponent<span class="token punctuation">,</span>
+  GridComponent<span class="token punctuation">,</span>
+  DatasetComponent<span class="token punctuation">,</span>
+  TransformComponent<span class="token punctuation">,</span>
+  LegendComponent<span class="token punctuation">,</span>
+  BarChart<span class="token punctuation">,</span>
+  PieChart<span class="token punctuation">,</span>
+  LineChart<span class="token punctuation">,</span>
+  LabelLayout<span class="token punctuation">,</span>
+  UniversalTransition<span class="token punctuation">,</span>
+  CanvasRenderer<span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> echarts<span class="token punctuation">;</span>
+</code></pre></div><p>如果打包方式使用 vite，可以在 vite.config.js 中加入以下代码，分块打包，减小 index 文件体积</p><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">build</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rollupOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">//打包优化，分块打包，减小index文件体积</span>
+        <span class="token literal-property property">manualChunks</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">echarts</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;echarts&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="封装组件" tabindex="-1"><a class="header-anchor" href="#封装组件" aria-hidden="true">#</a> 封装组件</h2><p>echarts-box.vue</p><p>展示echarts的div使用随机id。</p><p>为了兼容一些空数据情况，无配置或无接口数据时，显示暂无数据。</p><p>外层再包裹一层div，默认宽高均为100%，使用时候需要加上具体的宽高样式。</p><div class="language-html ext-html"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>module-box<span class="token punctuation">&quot;</span></span> <span class="token attr-name">v-loading</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>loading<span class="token punctuation">&quot;</span></span> <span class="token attr-name">element-loading-text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>正在加载中<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>!loading &amp;&amp; !showChart<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>no-data abs<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>暂无数据<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">:id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>id<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>chart-box<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token keyword">import</span> echarts <span class="token keyword">from</span> <span class="token string">&quot;./echarts&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> debounce <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;lodash&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">loading</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">default</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">chart</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">showChart</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">initChart</span><span class="token punctuation">(</span><span class="token parameter">option</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>option<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>showChart <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>chart<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>chart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>option<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>chart <span class="token operator">=</span> echarts<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>chart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>option<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>showChart <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">resizeHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>chart<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>chart<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">initResizeEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;resize&quot;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>resizeHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">destroyResizeEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;resize&quot;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>resizeHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">id</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token string">&quot;chart&quot;</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initResizeEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>showChart <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">beforeDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">destroyResizeEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 销毁echarts实例</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>chart<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>chart<span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>chart <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">activated</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initResizeEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">deactivated</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">destroyResizeEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-scss ext-scss"><pre class="language-scss"><code><span class="token selector">.module-box </span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.chart-box </span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.no-data </span><span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> 400<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> max-content<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="使用示例" tabindex="-1"><a class="header-anchor" href="#使用示例" aria-hidden="true">#</a> 使用示例</h2><p>调用组件的initChart方法，传入echarts配置，即可展示echarts图表。</p><div class="language-html ext-html"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>echarts-box</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>echart<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:loading</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>loading<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>echarts-box</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token keyword">const</span> option <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">//echarts配置</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>echart<span class="token punctuation">.</span><span class="token function">initChart</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span>
+</code></pre></div><!--]--></div><footer class="page-meta"><!----><!----><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: bin.jessica@hotmail.com">Jessicabin</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/blog/vue/table.html" class="" aria-label="基于element-ui的table组件封装"><!--[--><!--]--> 基于element-ui的table组件封装 <!--[--><!--]--></a></span><!----></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/blog/assets/app.1cb6ce62.js" defer></script>
+  </body>
+</html>

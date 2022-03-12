@@ -1,0 +1,1 @@
+const e={key:"v-6168be4b",path:"/Algorithm/reverse-linked-list.html",title:"\u53CD\u8F6C\u94FE\u8868",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{contributors:[{name:"Jessicabin",email:"bin.jessica@hotmail.com",commits:3}]},filePathRelative:"Algorithm/reverse-linked-list.md"};export{e as data};

@@ -1,0 +1,1 @@
+const t={key:"v-d11628a6",path:"/vue/mapping.html",title:"map\u6620\u5C04\u4F18\u5316",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{contributors:[{name:"Jessicabin",email:"bin.jessica@hotmail.com",commits:1}]},filePathRelative:"vue/mapping.md"};export{t as data};

@@ -1,0 +1,1 @@
+const t={key:"v-0a9465e4",path:"/vite/import-store.html",title:"vuex \u6279\u91CF\u5F15\u5165store\u6587\u4EF6",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{contributors:[{name:"Jessicabin",email:"bin.jessica@hotmail.com",commits:1}]},filePathRelative:"vite/import-store.md"};export{t as data};

@@ -1,0 +1,173 @@
+@mixin imgUrl($img) {
+  background: url("public/flex-folder/img/" + $img + ".png") no-repeat left top;
+  background-size: 100% 100%;
+}
+
+$menuHeight: 30px;
+$menuWidth: 80px;
+$tileWidth: 200px;
+$headerHeight: 50px;
+
+.page-wrapper {
+  width: 100%;
+  height: 700px;
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @include imgUrl("background");
+  > div {
+    box-sizing: border-box;
+  }
+}
+.header {
+  height: $headerHeight;
+  position: relative;
+  .title-container {
+    width: 100%;
+    height: 100%;
+    line-height: $headerHeight;
+    font-size: 28px;
+    text-align: center;
+    @include imgUrl("header-bg");
+    text-shadow: 0 0 5px #00baff;
+  }
+}
+.nav {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .menu-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    .menu {
+      width: $menuWidth;
+      @include imgUrl("menu-bg");
+      .menu-item {
+        line-height: $menuHeight;
+        font-family: Microsoft YaHei;
+        font-weight: bold;
+        text-align: center;
+        color: #ffffff;
+        opacity: 0.8;
+      }
+    }
+    .menu + .menu {
+      margin-left: 20px;
+    }
+  }
+}
+.main {
+  flex: 1;
+  overflow: hidden;
+  padding: 0 15px 15px;
+  margin-top: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+.screen-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.left-wrapper,
+.right-wrapper {
+  width: $tileWidth;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.left-container,
+.right-container {
+  width: $tileWidth;
+  height: 100%;
+  .tile-wrapper {
+    height: calc((100% - 20px) / 3);
+    position: relative;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+  }
+  .tile-wrapper + .tile-wrapper {
+    margin-top: 10px;
+  }
+}
+
+.center-wrapper {
+  padding: 0 16px;
+  flex: 1;
+  position: relative;
+  box-sizing: border-box;
+  .center-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.fold-icon {
+  position: absolute;
+  z-index: 99;
+  cursor: pointer;
+
+  &.left-icon,
+  &.right-icon {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 100px;
+  }
+  &.left-icon {
+    left: 0;
+  }
+  &.right-icon {
+    right: 0;
+  }
+  &.bottom-icon {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 16px;
+  }
+}
+.fold-left {
+  @include imgUrl("fold-left");
+}
+.unfold-left {
+  @include imgUrl("unfold-left");
+}
+.fold-right {
+  @include imgUrl("fold-right");
+}
+.unfold-right {
+  @include imgUrl("unfold-right");
+}
+
+//伸缩css
+.left-wrapper,
+.right-wrapper {
+  overflow: hidden;
+  &.hide {
+    width: 0;
+  }
+}
+.center-wrapper {
+  overflow: hidden;
+  .center-container {
+    overflow: hidden;
+  }
+}
+.left-wrapper,
+.right-wrapper,
+.center-wrapper,
+.fold-icon {
+  transition: all 0.5s linear;
+}

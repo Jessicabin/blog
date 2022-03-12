@@ -1,0 +1,1 @@
+const t={key:"v-6c4c521a",path:"/vue/form.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{contributors:[{name:"Jessicabin",email:"bin.jessica@hotmail.com",commits:1}]},filePathRelative:"vue/form.md"};export{t as data};

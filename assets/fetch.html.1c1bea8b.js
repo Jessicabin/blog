@@ -1,0 +1,1 @@
+const t={key:"v-65c2f2e8",path:"/javascript/fetch.html",title:"\u57FA\u4E8Eaxios\u5C01\u88C5api\u8C03\u7528\u65B9\u6CD5",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{contributors:[{name:"Jessicabin",email:"bin.jessica@hotmail.com",commits:5}]},filePathRelative:"javascript/fetch.md"};export{t as data};
